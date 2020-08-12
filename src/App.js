@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import PropTypes from "prop-types";
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Counter">
+            <div className="seconds">
+                <h1><i class="fas fa-stopwatch"></i></h1>
+                <h2>{props.x1}</h2>
+                <h2>{props.x10}</h2>
+                <h2>{props.x100}</h2>
+                <h2>{props.x1000}</h2>
+                <h2>{props.x10000}</h2>
+                <h2>{props.x100000}</h2>
+            </div>
+        </div>
     </div>
   );
 }
+
+App.propTypes = {
+  x1: PropTypes.string,
+  x10: PropTypes.string,
+  x100: PropTypes.string,
+  x1000: PropTypes.string,
+  x10000: PropTypes.string,
+  x100000: PropTypes.string,
+};
 
 export default App;
